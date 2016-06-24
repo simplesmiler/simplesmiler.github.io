@@ -6,9 +6,5 @@ menu:
 duoshuo: false
 duoshuo_name: 
 
-# disqus comment
-disqus: false
-disqus_shortname: 
-
 # google analytics
 googleTrackId: 

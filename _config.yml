@@ -12,7 +12,7 @@ timezone: Europe/Moscow
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://simplesmiler.com/mvvm-ramblings
+url: http://simplesmiler.com/
 root: /mvvm-ramblings
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -69,3 +69,7 @@ theme: Hacker
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# Disqus comments
+disqus: true
+disqus_shortname: mvvmramblings
