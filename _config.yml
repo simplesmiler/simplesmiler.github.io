@@ -17,6 +17,13 @@ root: /mvvm-ramblings
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+
 # Directory
 source_dir: source
 public_dir: public
