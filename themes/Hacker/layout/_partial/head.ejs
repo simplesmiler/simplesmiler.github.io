@@ -4,16 +4,12 @@
   <meta charset="utf-8">
   <%
   var title = [];
-  if (page.current > 1) title.push(__('page', page.current));
-  if (page.title) title.push(page.title);
-  if (page.category) title.push(page.category);
-  if (page.tag) title.push(page.tag);
-  if (page.archive){
-    if (page.year) title.push(__('archive_b', page.year + (page.month ? '/' + page.month : '')));
-    else title.push(__('archive_a'));
+  if (page.title) {
+    title.push(page.title);
+  } else {
+    title.push(config.title);
+    if (config.subtitle) title.push(config.subtitle);
   }
-  title.push(config.title);
-  if (config.subtitle) title.push(config.subtitle);
   %>
   <title><%= title.join(' | ') %></title>
   <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
