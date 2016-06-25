@@ -32,13 +32,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
-  <meta property="og:site_name" content="<%= config.title %>"/>
+  <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"><% } %>
+  <meta property="og:site_name" content="<%= config.title %>">
 
   <% if(page.cover) { %>
-    <meta property="og:image" content="<%= page.cover %>" />
+    <meta property="og:image" content="<%= page.cover %>">
   <% } else if(config.cover) { %>
-    <meta property="og:image" content="<%= config.cover %>"/>
+    <meta property="og:image" content="<%= config.cover %>">
   <% } %>
 
   <link href="<%- config.root %>favicon.ico" rel="icon">
