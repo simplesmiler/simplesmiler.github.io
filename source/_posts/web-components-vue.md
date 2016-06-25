@@ -1,7 +1,7 @@
 ---
 title: Web Components and Vue.js
 author: Denis Karabaza
-description: Vue.js relation to Web Components
+description: Will standard Web Components ever replace component-based frameworks?
 tags: [vue, mvvm, web-components]
 og:
   type: article
