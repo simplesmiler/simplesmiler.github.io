@@ -1,5 +1,7 @@
 ---
 title: Web Components and Vue.js
+author: Denis Karabaza
+description: Vue.js relation to Web Components
 date: 2016-06-25 00:27:01
 tags: [vue, mvvm, web-components]
 ---
