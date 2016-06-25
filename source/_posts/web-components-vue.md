@@ -2,8 +2,11 @@
 title: Web Components and Vue.js
 author: Denis Karabaza
 description: Vue.js relation to Web Components
-date: 2016-06-25 00:27:01
 tags: [vue, mvvm, web-components]
+og:
+  type: article
+  section: Technology
+  published: 2016-06-25 00:27:01
 ---
 
 > This is a short post, born out of discussion about Web Components and Vue.js. Albeit being about Vue, it applies to any component-based framework out there (React, Angular 2, etc.).
