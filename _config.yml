@@ -80,3 +80,7 @@ deploy:
 # Disqus comments
 disqus: true
 disqus_shortname: mvvmramblings
+
+# Analytics
+googleTrackId: UA-77875641-1 
+yandexMetrikaId: 38150325
