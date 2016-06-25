@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MVVM Ramblings</title>
+  <subtitle>About data, viemodels and Vue.js</subtitle>
+  <link href="/mvvm-ramblings/atom.xml" rel="self"/>
+  
+  <link href="http://simplesmiler.com/"/>
+  <updated>2016-06-25T02:01:26.174Z</updated>
+  <id>http://simplesmiler.com/</id>
+  
+  <author>
+    <name>Denis Karabaza</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Components and Vue.js</title>
+    <link href="http://simplesmiler.com/2016/06/25/web-components-vue/"/>
+    <id>http://simplesmiler.com/2016/06/25/web-components-vue/</id>
+    <published>2016-06-24T21:27:01.684Z</published>
+    <updated>2016-06-25T02:01:26.174Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;This is a short post, born out of discussion about Web Components and Vue.js. Albeit being about Vue, it applies to any component-based framework out there (React, Angular 2, etc.).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Different-problems&quot;&gt;&lt;a href=&quot;#Different-problems&quot; class=&quot;headerlink&quot; title=&quot;Different problems&quot;&gt;&lt;/a&gt;Different problems&lt;/h1&gt;&lt;p&gt;It appears to me, that Web Components are designed for &lt;strong&gt;semantic markup-driven documents&lt;/strong&gt;. With Web Components you will find yourself using Shadow DOM components with slots to assemble small things into big ones, and specify &lt;strong&gt;values&lt;/strong&gt; in component attributes.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;app-tabs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Home&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Home tab content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Settings&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Settings tab content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app-tabs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Vue on the other hand is designed for &lt;strong&gt;dynamic data-driven applications&lt;/strong&gt;. With Vue you will often use components encapsulated within other components, and will &lt;strong&gt;bind&lt;/strong&gt; attributes to the viewmodel of the “owner” component.&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tabs: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#123; title: &lt;span class=&quot;string&quot;&gt;&#39;Home&#39;&lt;/span&gt;, content: &lt;span class=&quot;string&quot;&gt;&#39;Home tab content&#39;&lt;/span&gt; &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#123; title: &lt;span class=&quot;string&quot;&gt;&#39;Settings&#39;&lt;/span&gt;, content: &lt;span class=&quot;string&quot;&gt;&#39;Settings tab content&#39;&lt;/span&gt; &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;],&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- application code --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;tabs&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:tabs&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tabs&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- within `tabs` template --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;tab&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tab in tabs&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tab.title&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tab.content&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;tab&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Some time ago there was this shift of separating components into two categories, &lt;a href=&quot;https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;presentational and container components&lt;/a&gt;. I think that this exactly fits the difference between Web Components and Vue components, with Web Components being about presentation, and Vue being about data flow.&lt;/p&gt;
+&lt;p&gt;That said, there is no reason why Vue could not be used in markup-driven style, or why Web Components could not be used in data-driven style. But they are really good at what they were designed for.&lt;/p&gt;
+&lt;h1 id=&quot;No-winner&quot;&gt;&lt;a href=&quot;#No-winner&quot; class=&quot;headerlink&quot; title=&quot;No winner&quot;&gt;&lt;/a&gt;No winner&lt;/h1&gt;&lt;p&gt;A curious reader might ask, whether Vue can be implemented on top of Web Components. It seems unlikely, because (arguably) Web Components do not provide all the answers to the problems Vue tries to solve. Vue already uses &lt;code&gt;template&lt;/code&gt; tag, and may embrace Shadow DOM to simplify content distribution and styles isolation. But I doubt it will ever pick up lifecycle API of custom elements, or HTML imports.&lt;/p&gt;
+&lt;p&gt;So can Web Components eventually replace Vue? Well, they not are exclusive technologies. I’m pretty sure, that once Web Components are available in all the relevant browsers, people will start using then together with Vue rather them in place of Vue. I would not be surprised to see this in the future:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;app-tabs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-for&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tab in tabs&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Home&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&amp;#123; tab.content &amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app-tab&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;app-tabs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;, with &lt;code&gt;app-tabs&lt;/code&gt; and &lt;code&gt;app-tab&lt;/code&gt; being presentational Web Components, and Vue driving the data flow.&lt;/p&gt;
+&lt;h1 id=&quot;One-ring-to-rule-them-all&quot;&gt;&lt;a href=&quot;#One-ring-to-rule-them-all&quot; class=&quot;headerlink&quot; title=&quot;One ring to rule them all&quot;&gt;&lt;/a&gt;One ring to rule them all&lt;/h1&gt;&lt;p&gt;But there’s more. Due to simple API, Web Components can provide &lt;strong&gt;interoperaility&lt;/strong&gt; between different frameworks. This is where Web Components will shine.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Different goals of standard Web Components and component-based frameworks (Vue.js, Angular 2, React, etc.), and how to make them work together.
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://simplesmiler.com/tags/vue/"/>
+    
+      <category term="mvvm" scheme="http://simplesmiler.com/tags/mvvm/"/>
+    
+      <category term="web-components" scheme="http://simplesmiler.com/tags/web-components/"/>
+    
+  </entry>
+  
+</feed>
