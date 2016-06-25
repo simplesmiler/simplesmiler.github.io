@@ -1,7 +1,7 @@
 ---
 title: Web Components and Vue.js
 author: Denis Karabaza
-description: Will standard Web Components ever replace component-based frameworks?
+description: Different goals of standard Web Components and component-based frameworks (Vue.js, Angular 2, React, etc.), and how to make them work together.
 tags: [vue, mvvm, web-components]
 og:
   type: article
