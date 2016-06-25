@@ -28,12 +28,15 @@
   <% } %>
   <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
 
+  <link rel="canonical" href="<%- canonical_url_for(path) %>">
+
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"><% } %>
   <meta property="og:site_name" content="<%= config.title %>">
+  <meta property="og:url" content="<%- canonical_url_for(path) %>">
 
   <% if(page.cover) { %>
     <meta property="og:image" content="<%= page.cover %>">
