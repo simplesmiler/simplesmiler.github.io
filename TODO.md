@@ -1,7 +1,7 @@
 # Tasks
 
 - Add an index page with a link to ramblings
-- Fix link to achrives
+- Fix link to achrives (should be `/archives/` instead of `/archives`)
 - Add favicon
 - Underline links
 - Improve code highlighting
